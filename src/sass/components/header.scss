@@ -1,9 +1,25 @@
+@use "../global";
+
 .header{
     background: var(--light-beige);
 
+    &__logo{
+        display: flex;
+        gap: .6rem;
+        padding-top: 2.6rem;
+    }
+
     &__img{
-        display: block;
         width: 9.2rem;
         height: 3.12rem;
+    }
+
+    &__site-name{
+        font-family: var(--main);
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 108%;
+        text-transform: uppercase;
+        color: var(--taupe-gray);
     }
 }
