@@ -112,6 +112,41 @@ picture{
     margin: 0 auto;
 }
 
+.carousel-container {
+    overflow: hidden;
+    width: 100%; /* Задайте ширину контейнера */
+    white-space: nowrap;
+    position: relative;
+}
+
+.carousel {
+    display: inline-flex;
+    animation: scroll 10s linear infinite;
+}
+
+.carousel span {
+    display: inline-block;
+    padding: 0 2rem; /* Отступ между элементами */
+    font-size: 1.2rem; /* Размер текста */
+}
+
+/* Анимация */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+@media(min-width: 1366px){
+    html{
+        font-size: 10px;
+    }
+}
+
 @media (max-width: 375px) {
     html {
         font-size: 2.66666667vw;

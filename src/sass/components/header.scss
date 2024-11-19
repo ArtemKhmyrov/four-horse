@@ -1,7 +1,12 @@
 @use "../global";
 
 .header{
-    background: var(--light-beige);
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
 
     &__logo{
         display: flex;
