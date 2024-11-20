@@ -16,16 +16,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        /* nested: resolve(__dirname, 'gifts.html'),  */ 
+       /*  gifts: resolve(__dirname, 'gifts.html'), */
       },
       output: {
-        entryFileNames: 'js/script.js',
-        chunkFileNames: 'js/[name].js',
+        entryFileNames: 'js/[name].js', // Уникальные файлы для каждой точки входа
+        chunkFileNames: 'js/[name]-[hash].js', // Общие чанки
         assetFileNames: ({ name }) => {
-          if (name.endsWith('.css')) {
-            return 'css/style.css';
+          if (name && name.endsWith('.css')) {
+            return 'css/style.css'; // Все CSS объединяются в один файл
           }
-          return 'assets/[name]-[hash][extname]';
+          return 'assets/[name]-[hash][extname]'; // Для остальных ассетов
         },
       },
     },

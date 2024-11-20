@@ -1,7 +1,17 @@
 'use strict';
 
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel');
-    const clone = carousel.innerHTML; // Клонируем содержимое
-    carousel.innerHTML += clone; // Добавляем его в конец
+const marquee = document.querySelectorAll('.marquee__item');
+const container = document.querySelector('.marquee__track');
+
+marquee.forEach((el) => {
+    const clone = el.cloneNode(true);
+    container.appendChild(clone);
+});
+
+const marqueeBottom = document.querySelectorAll('.marquee__item_bottom');
+const containerBottom = document.querySelector('.marquee__track_bottom');
+
+marqueeBottom.forEach((el) => {
+    const clone = el.cloneNode(true);
+    containerBottom.appendChild(clone);
 });
