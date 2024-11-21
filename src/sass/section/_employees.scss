@@ -52,6 +52,10 @@
             svg{
                 width: 4.4rem;
                 height: 4.4rem;
+
+                circle{
+                    transition: fill .5s ease-in-out;
+                }
             }
         }
 
@@ -133,6 +137,13 @@
             &-arrow{
                 &:hover{
                     cursor: pointer;
+
+                    svg{
+                        circle{
+                            fill: #FBCE51;
+                            transition: fill .5s ease-in-out;
+                        }
+                    }
                 }
                
             }
