@@ -31,6 +31,16 @@ body {
     background: #fff;
 }
 
+body::-webkit-scrollbar {
+    width: .8rem;
+    cursor: grab;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom,#FBCE51,#1f1f1f);
+    border-radius: 2rem;
+}
+
 input,
 textarea {
     -webkit-animation: bugfix infinite 1s;
