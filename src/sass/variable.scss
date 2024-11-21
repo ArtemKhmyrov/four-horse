@@ -112,3 +112,14 @@
         transform: translateX(-50%);
     }
 }
+
+@media(max-width:768px) {
+    .marquee{
+        height: 3.8rem;
+
+        &__item{
+            font-size: 1.6rem;
+            line-height: 1.1;
+        }
+    }
+}

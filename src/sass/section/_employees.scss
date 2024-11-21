@@ -7,6 +7,7 @@
         line-height: 1.2;
         text-transform: uppercase;
         color: #313131;
+        letter-spacing: .32rem;
     }
 
     &__wrap{
@@ -17,6 +18,7 @@
         display: flex;
         margin-bottom: 6rem;
         justify-content: space-between;
+        align-items: center;
     }
     
     &__slider{
@@ -190,6 +192,27 @@
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 0%);
+                width: 13.1rem;
+            }
+
+            &-picture{
+                width: 24rem;
+                height: 24rem;
+
+                img{
+                    width: 24rem;
+                    height: 24rem;
+                }
+            }
+
+            &-arrow{
+                width: 3.6rem;
+                height: 3.6rem;
+
+                svg{
+                    width: 3.6rem;
+                    height: 3.6rem;
+                }
             }
         }
 
@@ -201,7 +224,7 @@
         &__wrap{
             position: relative;
             margin-bottom: 10rem;
-            max-height: 78rem;
+            max-height: 58rem
         }
 
         &__nav{

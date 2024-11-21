@@ -28,3 +28,11 @@
         color: var(--taupe-gray);
     }
 }
+
+@media(max-width: 768px){
+    .header{
+        &__logo{
+            padding-top: 2rem;
+        }
+    }
+}
