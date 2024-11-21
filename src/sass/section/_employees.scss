@@ -1,0 +1,141 @@
+.employees{
+
+    &__title{
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 5.4rem;
+        line-height: 1.2;
+        text-transform: uppercase;
+        color: #313131;
+    }
+
+    &__wrap{
+
+    }
+
+    &__nav{
+        display: flex;
+        margin-bottom: 6rem;
+        justify-content: space-between;
+    }
+    
+    &__slider{
+        &-service{
+            width: 15.1rem;
+            height: 4.4rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+        &-wrap{
+            display: flex;
+            overflow: hidden;
+            gap: 2rem;
+            margin-bottom: 14rem;
+        }
+
+        &-counter{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            display: flex;
+            gap: .3rem;
+            color: #313131;
+        }
+
+        &-arrow{
+            width: 4.4rem;
+            height: 4.4rem;
+
+            svg{
+                width: 4.4rem;
+                height: 4.4rem;
+            }
+        }
+
+        &-item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 3.7rem;
+        }
+
+        &-fio{
+            margin-top: 2.8rem;
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 2.4rem;
+            line-height: 1.2;
+            color: #313131;
+        }
+
+        &-info{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 2rem;
+            line-height: 1.2;
+            color: #313131;
+            margin-top: .6rem;
+        }
+
+        &-btn{
+            margin-top: 2rem;
+            border: 1px solid #3057a2;
+            border-radius: 6.2rem;
+            padding: .5rem 1.2rem;
+            width: 11.3rem;
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 1.6rem;
+            line-height: 1.2;
+            color: #3057a2;
+            background: #ffffff;
+            transition: background .5s ease-in-out, color .5s ease-in-out;
+        }
+
+        &-items{
+            display: flex;
+            overflow: hidden;
+            gap: 2rem;
+        }
+
+        &-picture{
+            border-radius: 50%;
+            width: 32rem;
+            height: 32rem;
+            background: #e9ded4;
+
+            img{
+                width: 32rem;
+                height: 32rem;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+
+
+@media (hover: hover) {
+    .employees{
+        &__slider{
+            &-btn{
+                &:hover{
+                    color: #ffffff;
+                    background: #3057a2;
+                    transition: background .5s ease-in-out, color .5s ease-in-out;
+                }
+            }
+
+            &-arrow{
+                &:hover{
+                    cursor: pointer;
+                }
+               
+            }
+        }
+    }
+}
