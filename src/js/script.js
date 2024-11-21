@@ -16,90 +16,182 @@ marqueeBottom.forEach((el) => {
     containerBottom.appendChild(clone);
 });
 
+/* Слайдер с карточками */
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const initSlider = () => {
+        const container = document.querySelector(".steps__container");
+        const slides = Array.from(container.children);
+        const paginationDots = Array.from(document.querySelectorAll(".steps__circle"));
+        const btnPrev = document.querySelector(".arrow__prev");
+        const btnNext = document.querySelector(".arrow__next");
+
+        const slidePositions = [
+            "translateX(0)",    // Показывает 1 и 2 элемент
+            "translateX(-100%)", // Показывает 3 элемент
+            "translateX(-200%)", // Показывает 4 и 5 элемент
+            "translateX(-300%)", // Показывает 6 элемент
+            "translateX(-400%)", // Показывает 7 элемент
+        ];
+
+        let currentIndex = 0;
+
+        // Обновление состояния слайдера
+        const updateSlider = () => {
+            container.style.transform = slidePositions[currentIndex];
+            container.style.transition = "transform 0.6s ease";
+
+            // Убираем и добавляем активные классы для точек пагинации
+            paginationDots.forEach((dot) => dot.classList.remove("_active"));
+            paginationDots[currentIndex].classList.add("_active");
+
+            // Управляем состоянием кнопок
+            btnPrev.classList.toggle("_disabled", currentIndex === 0);
+            btnNext.classList.toggle("_disabled", currentIndex === slidePositions.length - 1);
+        };
+
+        // Переключение на предыдущий слайд
+        btnPrev.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex -= 1;
+                updateSlider();
+            }
+        });
+
+        // Переключение на следующий слайд
+        btnNext.addEventListener("click", () => {
+            if (currentIndex < slidePositions.length - 1) {
+                currentIndex += 1;
+                updateSlider();
+            }
+        });
+
+        // Переключение слайдов по точкам пагинации
+        paginationDots.forEach((dot, index) => {
+            dot.addEventListener("click", () => {
+                currentIndex = index;
+                updateSlider();
+            });
+        });
+
+        // Инициализация слайдера
+        updateSlider();
+    };
+
+    // Проверка ширины экрана
+    const checkScreenSize = () => {
+        if (window.innerWidth <= 768) {
+            initSlider();
+        }
+    };
+
+    // Запускаем логику слайдера
+    checkScreenSize();
+
+    // Перезапуск слайдера при изменении размера окна
+    window.addEventListener("resize", () => {
+        if (window.innerWidth <= 768) {
+            location.reload();
+        }
+    });
+});
+
+
 
 // Слайдер с участниками
 
-const participants = [
-    { name: "Хозе-Рауль Капабланка", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" },
-    { name: "Эммануил Ласкер", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" },
-    { name: "Александр Алехин", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" },
-    { name: "Арон Нимцович", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" },
-    { name: "Рихард Рети", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" },
-    { name: "Остап Бендер", title: "Чемпион мира по шахматам", img: "/src/img/statick/employees.png" }
-];
+document.addEventListener("DOMContentLoaded", function () {
+    const sliderWrap = document.querySelector(".employees__slider-wrap");
+    const slides = Array.from(sliderWrap.children);
+    const btnLeft = document.querySelector(".arrow__left");
+    const btnRight = document.querySelector(".arrow__right");
+    const counter = document.querySelector(".employees__slider-counter .current");
+    const total = document.querySelector(".employees__slider-counter .total");
 
-let currentIndex = 0;
-let itemsToShow = 1;
-let autoSwitchInterval;
+    let slideWidth = slides[0].offsetWidth + 20; // Размер одного слайда
+    let slidesPerView = window.innerWidth <= 768 ? 1 : 3; // Количество слайдов на экране
+    let currentIndex = 0;
+    let timer;
 
-function showParticipants() {
-    const sliderItems = document.querySelector('.employees__slider-items');
-    sliderItems.innerHTML = ''; // Очищаем текущие элементы
+    // Функция для обновления количества слайдов и ширины
+    const updateSlideSettings = () => {
+        slidesPerView = window.innerWidth <= 768 ? 1 : 3;
+        slideWidth = slides[0].offsetWidth + 20;
+        total.textContent = Math.ceil(slides.length / slidesPerView);
+        moveSlider();
+    };
 
-    // Добавляем элементы
-    for (let i = -1; i <= itemsToShow; i++) {
-        const index = (currentIndex + i + participants.length) % participants.length;
-        const participant = participants[index];
-        const item = document.createElement('div');
-        item.className = 'employees__slider-item';
-        item.innerHTML = `
-            <picture class="employees__slider-picture">
-                <img src="${participant.img}" alt="${participant.name}">
-            </picture>
-            <div class="employees__slider-fio">${participant.name}</div>
-            <div class="employees__slider-info">${participant.title}</div>
-            <a href="#" class="employees__slider-btn">Подробнее</a>
-        `;
-        sliderItems.appendChild(item);
+    const updateButtons = () => {
+        btnLeft.classList.toggle("_disabled", currentIndex === 0);
+        btnRight.classList.toggle("_disabled", currentIndex >= slides.length - slidesPerView);
+    };
+
+    const moveSlider = () => {
+        sliderWrap.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        counter.textContent = Math.ceil(currentIndex / slidesPerView) + 1;
+        updateButtons();
+    };
+
+    const resetTimer = () => {
+        clearInterval(timer);
+        timer = setInterval(() => {
+            currentIndex = (currentIndex + slidesPerView) % slides.length;
+            moveSlider();
+        }, 4000);
+    };
+
+    btnRight.addEventListener("click", () => {
+        if (currentIndex < slides.length - slidesPerView) {
+            currentIndex += slidesPerView;
+            moveSlider();
+            resetTimer();
+        }
+    });
+
+    btnLeft.addEventListener("click", () => {
+        if (currentIndex > 0) {
+            currentIndex -= slidesPerView;
+            moveSlider();
+            resetTimer();
+        }
+    });
+
+    // Обновляем настройки при изменении размера окна
+    window.addEventListener("resize", updateSlideSettings);
+
+    // Инициализация
+    updateSlideSettings();
+    resetTimer();
+});
+
+
+/* Хук для рендеринга новых заголовков в мобильной версии */
+
+function updateHelperTextOnMobile() {
+    const helperText = document.querySelector('.helper__text');
+    const helperTitle = document.querySelector('.helper__picture');
+    if (!helperText) return;
+
+    const span = helperText.querySelector('span');
+    const h2 = helperText.querySelector('h2');
+
+    if (window.innerWidth <= 768) {
+        h2.textContent = `Чтобы поддержать Международный васюкинский турнир`;
+        span.remove();
+        const helperPicture = document.querySelector('.helper__picture');
+
+        if (helperPicture) {
+            const newHtml = `
+                <div class="helper__hook-text">
+                    <span>посетите лекцию на тему: </span>
+                    <span>«Плодотворная дебютная идея»</span>
+                </div>
+            `;
+            helperPicture.insertAdjacentHTML('afterend', newHtml);
+        }
     }
 }
 
-function nextParticipant() {
-    const sliderItems = document.querySelector('.employees__slider-items');
-    
-    // Устанавливаем анимацию ухода влево
-    sliderItems.style.transition = "transform 0.4s ease";
-    sliderItems.style.transform = "translateX(-100%)";
-
-    // После завершения анимации обновляем карточки
-    setTimeout(() => {
-        sliderItems.style.transition = "none"; // Убираем плавность для перестановки
-        currentIndex = (currentIndex + itemsToShow) % participants.length;
-        showParticipants();
-        sliderItems.style.transform = "translateX(0)"; // Возвращаем в исходное положение
-    }, 400);
-
-    resetAutoSwitch();
-}
-
-function prevParticipant() {
-    const sliderItems = document.querySelector('.employees__slider-items');
-
-    // Добавляем новые карточки перед текущими для анимации справа налево
-    currentIndex = (currentIndex - itemsToShow + participants.length) % participants.length;
-    showParticipants();
-
-    sliderItems.style.transition = "none"; // Убираем плавность для добавления новых карточек
-    sliderItems.style.transform = "translateX(-100%)"; // Перемещаем вправо для начальной позиции
-
-    setTimeout(() => {
-        sliderItems.style.transition = "transform 0.4s ease"; // Включаем плавность
-        sliderItems.style.transform = "translateX(0)"; // Возвращаем в исходное положение
-    }, 50); // Задержка для корректного применения анимации
-
-    resetAutoSwitch();
-}
-
-function resetAutoSwitch() {
-    clearInterval(autoSwitchInterval);
-    autoSwitchInterval = setInterval(nextParticipant, 4000); 
-}
-
-function initSlider() {
-    showParticipants();
-    autoSwitchInterval = setInterval(nextParticipant, 4000);
-}
-
-document.addEventListener("DOMContentLoaded", initSlider);
-document.querySelector('.arrow__right').addEventListener('click', nextParticipant);
-document.querySelector('.arrow__left').addEventListener('click', prevParticipant);
+window.addEventListener('resize', updateHelperTextOnMobile);
+document.addEventListener('DOMContentLoaded', updateHelperTextOnMobile);

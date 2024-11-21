@@ -117,7 +117,7 @@
         font-family: var(--font-family);
         font-weight: 400;
         font-size: 2rem;
-        line-height: 120%;
+        line-height: 1.2;
         color: #3057a2;
         position: relative;
         cursor: pointer;
@@ -137,9 +137,6 @@
     }
 }
 
-
-
-
 @media(hover: hover){
     .helper{
         &__call{
@@ -155,5 +152,91 @@
             }
         }
         
+    }
+}
+
+@media(max-width: 768px){
+    .helper{
+        margin-bottom: 12rem;
+        &__label{
+            flex-direction: column;
+        }
+
+        &__wrap{
+            margin-bottom: 0;
+        }
+
+        &__text{
+            width: unset;
+            font-size: 2.8rem;
+            line-height: 1.35;
+            h2{
+                color: #313131;
+            }
+            margin-bottom: 2.4rem;
+        }
+
+        &__picture{
+            width: 33.5rem;
+            height: 21.2rem;
+
+            &-thing{
+                width: 33.5rem;
+                height: 40.2rem;
+            }
+        }
+
+        &__table{
+            margin-top: 0;
+            &-title{
+              
+                max-width: unset;
+                margin: 2.4rem 0 4.4rem;
+
+                span{
+                    font-size: 2.8rem;
+                    line-height: 1.35;
+                }
+            }
+
+            tr{
+                display: flex;
+                flex-direction: column;
+                &:not(:last-child){
+                    border-bottom: 2px solid #D0D0D0;
+                }
+            }
+            td{
+                width: 100%;
+                border: none;
+            }
+        }
+
+        &__info{
+            max-width: unset;
+
+        }
+
+        &__hook{
+            &-text{
+                display: flex;
+                flex-direction: column;
+                margin: 2.5rem 0 3.4rem;
+
+                span{
+                    font-family: var(--second-family);
+                    font-weight: 400;
+                    font-size: 2.8rem;
+                    line-height: 1.35;
+                    text-transform: uppercase;
+                    &:nth-child(1){
+                        color: #313131;
+                    }
+                    &:nth-child(2){
+                        color: #F54932;
+                    }
+                }
+            }
+        }
     }
 }

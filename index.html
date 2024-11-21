@@ -9,12 +9,12 @@
 <body>
     <header class="header">
         <div class="container">
-            <div class="header__logo">
+            <a href="./" class="header__logo">
                 <picture class="header__img">
                     <img src="/src/img/statick/logo.png" alt="four horse">
                 </picture>
-                <a href="./"><h1 class="header__site-name"><p>клуб</p><p>четырех коней</p></h1></a>
-            </div>
+                <h1 class="header__site-name"><p>клуб</p><p>четырех коней</p></h1>
+            </a>
         </div>
     </header>
     <main>
@@ -79,7 +79,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <a href="https://saratov.hh.ru/resume/e50ecb4bff0ce384930039ed1f436671474b62" class="helper__call">По всем вопросам обращаться в администрацию к К. Михельсону</a>
+                            <a href="https://saratov.hh.ru/resume/e50ecb4bff0ce384930039ed1f436671474b62" class="helper__call" target="_blank">По всем вопросам обращаться в администрацию к К. Михельсону</a>
                         </div>
                     </div>
                 </div>
@@ -101,6 +101,28 @@
                         <div class="steps__item steps__item-6">Постройка сверхмощной радиостанции для передачи всему миру сенсационных результатов</div>
                         <div class="steps__item steps__item-7">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелос и Мельбурн</div>
                     </div>
+
+                    <div class="steps__wrap-pagination">
+                       <div class="steps_arrow arrow__prev _disabled">
+                            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131" />
+                                <path d="M24.5382 30.4615L16.0767 21.9999L24.5382 13.5384" stroke="white" stroke-width="2" stroke-linecap="square" />
+                            </svg>
+                        </div>
+                        <span class="steps__pagination">
+                            <span class="steps__circle _active"></span>
+                            <span class="steps__circle"></span>
+                            <span class="steps__circle"></span>
+                            <span class="steps__circle"></span>
+                            <span class="steps__circle"></span>
+                        </span>
+                        <div class="steps_arrow arrow__next">
+                            <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="22" cy="22" r="22" fill="#313131" />
+                                <path d="M19.4618 13.5384L27.9233 21.9999L19.4618 30.4615" stroke="white" stroke-width="2" stroke-linecap="square" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -110,13 +132,15 @@
                     <div class="employees__nav">
                         <h2 class="employees__title">Участники турнира</h2>
                         <div class="employees__slider-service">
-                            <div class="employees__slider-arrow arrow__left">
+                            <div class="employees__slider-arrow arrow__left _disabled">
                                 <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="22" cy="22" r="22" transform="rotate(-180 22 22)" fill="#313131" />
                                     <path d="M24.5382 30.4615L16.0767 21.9999L24.5382 13.5384" stroke="white" stroke-width="2" stroke-linecap="square" />
                                 </svg>
                             </div>
-                            <div class="employees__slider-counter"><span>1</span>/<span>2</span></div>
+                            <div class="employees__slider-counter">
+                                <span class="current">1</span>/<span class="total">2</span>
+                            </div>
                             <div class="employees__slider-arrow arrow__right">
                                 <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="22" cy="22" r="22" fill="#313131" />
@@ -174,6 +198,58 @@
                             <div class="employees__slider-info">Чемпион мира по шахматам</div>
                             <a href="#" class="employees__slider-btn">Подробнее</a>
                         </div>
+
+                        <!-- Дубли для проверки корректности работы слайдера -->
+                        <!--
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Хозе-Рауль Капабланка">
+                                </picture>
+                                <div class="employees__slider-fio">Хозе-Рауль Капабланка</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div>
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Эммануил Ласкер">
+                                </picture>
+                                <div class="employees__slider-fio">Эммануил Ласкер</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div>
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Александр Алехин">
+                                </picture>
+                                <div class="employees__slider-fio">Александр Алехин</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div>
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Арон Нимцович">
+                                </picture>
+                                <div class="employees__slider-fio">Арон Нимцович</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div>
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Рихард Рети">
+                                </picture>
+                                <div class="employees__slider-fio">Рихард Рети</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div>
+                            <div class="employees__slider-item">
+                                <picture class="employees__slider-picture">
+                                    <img src="/src/img/statick/employees.png" alt="Остап Бендер">
+                                </picture>
+                                <div class="employees__slider-fio">Остап Бендер</div>
+                                <div class="employees__slider-info">Чемпион мира по шахматам</div>
+                                <a href="#" class="employees__slider-btn">Подробнее</a>
+                            </div> 
+                        -->
                     </div>
                 </div>
             </div>

@@ -52,3 +52,46 @@
         justify-content: space-between;
     }
 }
+
+@media(max-width: 768px){
+    .hero{
+        background-position: 80% 100%, 0% 0%;
+        background-size: auto 50%;
+        background-image: url('/src/img/statick/hero-background.jpg'), url('/src/img/statick/noise.jpg');
+        &__buttons{
+            flex-direction: column;
+            gap: 1.4rem;
+        }
+
+        &__description{
+            font-size: 3.6rem;
+            line-height: 1.1;
+        }
+        
+        &__wrap{
+            padding-top: 9rem;
+        }
+
+        &__info{
+            text-align: left;
+        }
+
+        .button{
+            height: 4.7rem;
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            gap: .5rem;
+            span{
+                width: min-content;
+                white-space: nowrap;
+            }
+
+            &_transparent{
+                background: #fff;
+                opacity: 0.9;
+                border: none;
+            }
+        }
+    }
+}

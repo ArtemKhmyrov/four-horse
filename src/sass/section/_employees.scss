@@ -10,7 +10,7 @@
     }
 
     &__wrap{
-
+        overflow: hidden;
     }
 
     &__nav{
@@ -30,9 +30,12 @@
         }
         &-wrap{
             display: flex;
-            overflow: hidden;
             gap: 2rem;
             margin-bottom: 14rem;
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 2rem;
+            width: 100%;
         }
 
         &-counter{
@@ -57,6 +60,17 @@
                     transition: fill .5s ease-in-out;
                 }
             }
+
+            &._disabled{
+                cursor: not-allowed;
+                svg{
+                    circle{
+                        fill: #D6D6D6;
+                        cursor: not-allowed;
+                        transition: fill .5s ease-in-out;
+                    }
+                }
+            }
         }
 
         &-item{
@@ -65,6 +79,7 @@
             justify-content: center;
             flex-direction: column;
             padding: 0 3.7rem;
+            flex: 0 0 calc(33.33% - 1.33rem);
         }
 
         &-fio{
@@ -145,8 +160,55 @@
                         }
                     }
                 }
+
+                &._disabled{
+                    svg{
+                        circle, path{
+                            fill: #D6D6D6;
+                            cursor: not-allowed;
+                            transition: fill .5s ease-in-out;
+                        }
+                    }
+                }
                
             }
         }
+    }
+}
+
+@media (max-width: 768px) {
+    .employees{
+        &__slider{
+            &-item{
+                flex: 0 0 100%;
+
+                padding: 0;
+            }
+
+            &-service{
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translate(-50%, 0%);
+            }
+        }
+
+        &__title{
+            font-size: 3.6rem;
+            line-height: 1.1;
+        }
+
+        &__wrap{
+            position: relative;
+            margin-bottom: 10rem;
+            max-height: 78rem;
+        }
+
+        &__nav{
+            flex-direction: column;
+            margin-bottom: 4rem;
+        }
+
+        
     }
 }
