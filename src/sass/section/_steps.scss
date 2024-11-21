@@ -1,0 +1,298 @@
+.steps{
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+        gap: 2rem;
+        margin-top: 5.4rem;
+        margin-bottom: 20rem;
+    }
+
+    &__wrap{
+        &-pagination{
+            display: none;
+        }
+    }
+
+    &__title{
+        display: flex;
+        flex-direction: column;
+  
+            font-family: var(--second-family);
+            font-weight: 400;
+            font-size: 54px;
+            line-height: 1.2;
+            text-transform: uppercase;
+            color: #313131;
+        
+        div{
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            span{
+                &:nth-child(1){
+                    letter-spacing: .2rem;
+                }
+            }
+        
+        }
+
+        &_big{
+            letter-spacing: .4rem;
+        }
+
+    }
+
+    &__subtitle{
+        display: flex;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 2rem;
+        line-height: 1.2;
+        color: #3057a2;
+        max-width: 31rem;
+    }
+
+    &__item{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 1.2;
+        color: #313131;
+        background-image: url('/src/img/statick/steps-background.jpg');
+        background-repeat: no-repeat;
+        padding: 2rem;
+        display: flex;
+        gap: 1.6rem;
+        min-height: 11rem;
+        
+        &::before{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex: 0 0 3.6rem;
+            background: #ffffff;
+            width: 3.6rem;
+            height: 3.6rem;
+            font-weight: 600;
+            font-size: 2rem;
+            line-height: 1.2;
+            border-radius: 50%;
+            font-family: var(--font-family);
+            color: var(--lighter-dark);
+          
+        }
+
+        &-1{
+            &::before{
+                content: '1';
+            }
+        }
+
+        &-2{
+            &::before{
+                content: '2';
+            }
+        }
+
+        &-3{
+            &::before{
+                content: '3';
+            }
+        }
+
+        &-4{
+            &::before{
+                content: '4';
+            }
+        }
+
+        &-5{
+            &::before{
+                content: '5';
+            }
+        }
+
+        &-6{
+            &::before{
+                content: '6';
+            }
+        }
+
+        &-7{
+            &::before{
+                content: '7';
+            }
+
+            &::after {
+                content: '';
+                background-image: url('/src/img/statick/airplane.png');
+                background-size: 40rem 23.5rem;
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 40rem;
+                height: 23.5rem; 
+                top: -10rem;
+                right: -6rem;
+            }
+            
+        }
+    }
+}
+
+.steps__item-1 { grid-area: 1 / 1 / 2 / 2; }
+.steps__item-2 { grid-area: 1 / 2 / 2 / 3; }
+.steps__item-3 { grid-area: 1 / 3 / 3 / 4; }
+.steps__item-4 { grid-area: 2 / 1 / 3 / 2; }
+.steps__item-5 { grid-area: 2 / 2 / 3 / 3; }
+.steps__item-6 { grid-area: 3 / 1 / 4 / 2; }
+.steps__item-7 { grid-area: 3 / 2 / 4 / 4; padding-right: 32rem; position: relative;}
+
+
+@media (max-width: 768px) {
+    .steps{
+        &__wrap{
+            overflow: hidden;
+
+            &-pagination{
+                display: flex;
+                gap: 1.6rem;
+                justify-content: center
+            }
+            margin-bottom: 12rem;
+        }
+
+        &__container{
+            display: grid;
+            grid-column-gap: 0;
+            grid-row-gap: 0;
+            grid-template-columns: repeat(5, 33.5rem);
+            grid-template-rows: 15rem;
+            margin-bottom: 2.8rem;
+            margin-top: 15rem;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        &__item{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin: 0;
+            padding: 2.2rem 1rem 1rem 2rem;
+            line-height: 1.2;
+        
+            &-1{
+                grid-area: 1 / 1 / 2 / 2;
+                padding-top: 6.2rem;
+                position: relative;
+                &::after {
+                    content: "";
+                    background-image: url(/src/img/statick/airplane.png);
+                    background-size: 33.5rem 18.2rem;
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    width: 31.5rem;
+                    height: 19.2rem;
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    position: absolute;
+                    top: -121px;
+                    right: 11px;
+                }
+            }
+            &-2{
+                grid-area: 2 / 1 / 3 / 2;
+            }
+            &-3{
+                grid-area: 1 / 2 / 3 / 3;
+            }
+            &-4{
+                grid-area: 1 / 3 / 2 / 4;
+            }
+            &-5{
+                grid-area: 2 / 3 / 3 / 4;
+            }
+            &-6{
+                grid-area: 1 / 4 / 3 / 5;
+            }
+            &-7{
+                grid-area: 1 / 5 / 3 / 6;
+                padding-right: 2rem;
+                &::after{
+                    display: none;
+                }
+            }
+           
+            &._active {
+                display: block;
+            }
+        }
+
+        &__title{
+            font-size: 3.6rem;
+            line-height: 1.1;
+            div{
+                flex-direction: column;
+                gap: 1rem;
+
+                span{
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+
+        &__subtitle{
+            max-width: 100%;
+        }
+
+        &_arrow{
+            width: 3.6rem;
+            height: 3.6rem;
+
+            svg{
+                width: 3.6rem;
+                height: 3.6rem;
+
+                circle{
+                    transition: fill .5s ease-in-out;
+                }
+            }
+
+            &._disabled{
+                cursor: not-allowed;
+                svg{
+                    circle{
+                        fill: #D6D6D6;
+                        cursor: not-allowed;
+                        transition: fill .5s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        &__pagination{
+            display: flex;
+            align-items: center;
+            gap: .6rem;
+        }
+
+        &__circle{
+            content: '';
+            display: block;
+            border-radius: 50%;
+            width: 1rem;
+            height: 1rem;
+            background: #d6d6d6;
+
+            &._active{
+                background: #313131;
+            }
+        }
+
+
+    }
+}

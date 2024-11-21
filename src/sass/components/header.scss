@@ -1,0 +1,38 @@
+@use "../global";
+
+.header{
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+
+    &__logo{
+        display: flex;
+        gap: .6rem;
+        padding-top: 2.6rem;
+    }
+
+    &__img{
+        width: 9.2rem;
+        height: 3.12rem;
+    }
+
+    &__site-name{
+        font-family: var(--main);
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.08;
+        text-transform: uppercase;
+        color: var(--taupe-gray);
+    }
+}
+
+@media(max-width: 768px){
+    .header{
+        &__logo{
+            padding-top: 2rem;
+        }
+    }
+}

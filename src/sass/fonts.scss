@@ -1,0 +1,397 @@
+@font-face {
+    font-family: "Golos Text";
+    src: url("../fonts/Golos-Text/GolosText-Medium.eot");
+    src:
+        local("Golos Text Medium"),
+        local("GolosText-Medium"),
+        url("../fonts/Golos-Text/GolosText-Medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Golos-Text/GolosText-Medium.woff2") format("woff2"),
+        url("../fonts/Golos-Text/GolosText-Medium.woff") format("woff"),
+        url("../fonts/Golos-Text/GolosText-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("../fonts/Golos-Text/GolosText-Black.eot");
+    src:
+        local("Golos Text Black"),
+        local("GolosText-Black"),
+        url("../fonts/Golos-Text/GolosText-Black.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Golos-Text/GolosText-Black.woff2") format("woff2"),
+        url("../fonts/Golos-Text/GolosText-Black.woff") format("woff"),
+        url("../fonts/Golos-Text/GolosText-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("../fonts/Golos-Text/GolosText-DemiBold.eot");
+    src:
+        local("Golos Text DemiBold"),
+        local("GolosText-DemiBold"),
+        url("../fonts/Golos-Text/GolosText-DemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Golos-Text/GolosText-DemiBold.woff2") format("woff2"),
+        url("../fonts/Golos-Text/GolosText-DemiBold.woff") format("woff"),
+        url("../fonts/Golos-Text/GolosText-DemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("../fonts/Golos-Text/GolosText-Bold.eot");
+    src:
+        local("Golos Text Bold"),
+        local("GolosText-Bold"),
+        url("../fonts/Golos-Text/GolosText-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Golos-Text/GolosText-Bold.woff2") format("woff2"),
+        url("../fonts/Golos-Text/GolosText-Bold.woff") format("woff"),
+        url("../fonts/Golos-Text/GolosText-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Golos Text";
+    src: url("../fonts/Golos-Text/GolosText-Regular.eot");
+    src:
+        local("Golos Text Regular"),
+        local("GolosText-Regular"),
+        url("../fonts/Golos-Text/GolosText-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/Golos-Text/GolosText-Regular.woff2") format("woff2"),
+        url("../fonts/Golos-Text/GolosText-Regular.woff") format("woff"),
+        url("../fonts/Golos-Text/GolosText-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Montserrat font
+
+@font-face {
+    font-family: "Montserrat Regular";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Regular"),
+        url("../fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Italic"),
+        url("../fonts/Montserrat/Montserrat-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Thin";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Thin"),
+        url("../fonts/Montserrat/Montserrat[wght].woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Thin Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Thin Italic"),
+        url("../fonts/Montserrat/Montserrat-Italic[wght].woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Thin";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Thin"),
+        url("../fonts/Montserrat/Montserrat-Thin.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Thin Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Thin Italic"),
+        url("../fonts/Montserrat/Montserrat-ThinItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraLight";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat ExtraLight"),
+        url("../fonts/Montserrat/Montserrat-ExtraLight.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraLight Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat ExtraLight Italic"),
+        url("../fonts/Montserrat/Montserrat-ExtraLightItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Light";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Light"),
+        url("../fonts/Montserrat/Montserrat-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Light Italic"),
+        url("../fonts/Montserrat/Montserrat-LightItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Medium";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Medium"),
+        url("../fonts/Montserrat/Montserrat-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Medium Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Medium Italic"),
+        url("../fonts/Montserrat/Montserrat-MediumItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat SemiBold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat SemiBold"),
+        url("../fonts/Montserrat/Montserrat-SemiBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat SemiBold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat SemiBold Italic"),
+        url("../fonts/Montserrat/Montserrat-SemiBoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Bold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Bold"),
+        url("../fonts/Montserrat/Montserrat-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Bold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Bold Italic"),
+        url("../fonts/Montserrat/Montserrat-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraBold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat ExtraBold"),
+        url("../fonts/Montserrat/Montserrat-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat ExtraBold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat ExtraBold Italic"),
+        url("../fonts/Montserrat/Montserrat-ExtraBoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Black";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Black"),
+        url("../fonts/Montserrat/Montserrat-Black.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Montserrat Black Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Montserrat Black Italic"),
+        url("../fonts/Montserrat/Montserrat-BlackItalic.woff") format("woff");
+}
+
+// Merriweather font
+
+@font-face {
+    font-family: "Merriweather Regular";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Regular"),
+        url("../fonts/Merriweather/Merriweather-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Regular";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Regular"),
+        url("../fonts/Merriweather/Merriweather-Regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Italic"),
+        url("../fonts/Merriweather/Merriweather-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Italic"),
+        url("../fonts/Merriweather/Merriweather-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Light";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Light"),
+        url("../fonts/Merriweather/Merriweather-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Light";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Light"),
+        url("../fonts/Merriweather/Merriweather-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Light Italic"),
+        url("../fonts/Merriweather/Merriweather-LightItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Light Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Light Italic"),
+        url("../fonts/Merriweather/Merriweather-LightItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Bold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Bold"),
+        url("../fonts/Merriweather/Merriweather-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Bold";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Bold"),
+        url("../fonts/Merriweather/Merriweather-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Bold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Bold Italic"),
+        url("../fonts/Merriweather/Merriweather-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Bold Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Bold Italic"),
+        url("../fonts/Merriweather/Merriweather-BoldItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Black";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Black"),
+        url("../fonts/Merriweather/Merriweather-Black.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Black";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Black"),
+        url("../fonts/Merriweather/Merriweather-Black.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Black Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Black Italic"),
+        url("../fonts/Merriweather/Merriweather-BlackItalic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Merriweather Black Italic";
+    font-style: normal;
+    font-weight: normal;
+    src:
+        local("Merriweather Black Italic"),
+        url("../fonts/Merriweather/Merriweather-BlackItalic.woff") format("woff");
+}
