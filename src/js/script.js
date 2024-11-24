@@ -75,24 +75,25 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Инициализация слайдера
         updateSlider();
     };
 
-    // Проверка ширины экрана
     const checkScreenSize = () => {
         if (window.innerWidth <= 768) {
             initSlider();
         }
     };
 
-    // Запускаем логику слайдера
     checkScreenSize();
 
-    // Перезапуск слайдера при изменении размера окна
+    let sliderInitialized = false;
+
     window.addEventListener("resize", () => {
-        if (window.innerWidth <= 768) {
-            location.reload();
+        if (window.innerWidth <= 768 && !sliderInitialized) {
+            initSlider();
+            sliderInitialized = true;
+        } else if (window.innerWidth > 768 && sliderInitialized) {
+            sliderInitialized = false;
         }
     });
 });
